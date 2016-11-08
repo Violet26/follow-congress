@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Bills</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let bill of bills; let i = index;" (click)="readBill(bill.id);">
+    <ion-card-header [innerHTML]="bill.title"></ion-card-header>
+    <ion-card-content>
+      <div>Introduced on {{bill.introduced_date}}</div>
+      <div>Sponsered by {{bill.sponsor.name}}</div>
+      <div>{{bill.current_status_label}} on {{bill.current_status_date}}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

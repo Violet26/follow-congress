@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Senate</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let rep of senate; let i = index;" (click)="viewRep(rep.id);">
+    <ion-card-header>
+      <img src="https://www.govtrack.us/data/photos/{{rep.person.id}}-200px.jpeg"/>
+      <h1>{{rep.person.lastname}}, {{rep.person.firstname}}</h1>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
