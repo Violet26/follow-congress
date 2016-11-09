@@ -2,7 +2,7 @@ declare var window;
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Data } from '../../providers/data';
-import { ReadPage } from "../read/read";
+import { RepPage } from "../rep/rep";
 import {Observable} from 'rxjs/Rx';
 
 @Component({
@@ -29,23 +29,16 @@ export class HousePage {
     this.loader.present();
   }
 
-  ngAfterViewInit() {
-    //try {this.loader.dismiss();} catch(e) {}
-  }
-
-  ionViewWillEnter() {
-    try {this.loader.dismiss();} catch(e) {}
-  }
-
   loadData() {
-    this.house = this.data.getHouse();
+    this.house = this.data.getSenate();
     if (this.house.length > 0) {
       this.subscription.unsubscribe();
+      this.loader.dismiss();
     }
   }
 
   launchPage() {
-    this.navCtrl.push(ReadPage, { rep: this.rep, loading: this.loader });
+    this.navCtrl.push(RepPage, { rep: this.rep, loading: this.loader });
   }
 
   viewRep( rep: string ) {

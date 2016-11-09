@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar
+      placeholder="Search"
+      [(ngModel)]="searchFor"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onSearchInput($event)"
+      (ionCancel)="onSearchCancel($event)">
+    </ion-searchbar>
+    <ion-title>Book of {{book}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let chapter of readView.chapters; let c = index;">
+    <h1>chapter {{c + 1}}</h1>
+    <ol type="1">
+      <li *ngFor="let verse of chapter.verses;" [innerHTML]="verse"></li>
+    </ol>
+  </div>
+</ion-content>
