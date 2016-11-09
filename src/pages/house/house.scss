@@ -1,5 +1,30 @@
 page-house {
-    ion-card {width:140px !important; float:left; margin:10px !important;text-align:center;padding-top:10px !important;}
-    ion-card img {height:65px;width:auto;display:inline-block;}
-    ion-card h1 {font-size:1.2em !important}
+    ion-card {
+        width:140px !important;
+        float:left;
+        text-align:center;
+        padding-top:5px !important;
+        padding-top:10px !important;
+        margin-top:0 !important;
+        ion-card-header {
+            padding:0px !important;
+            margin:0 !important;
+        }
+        .Democrat {
+            background-color: darkblue;
+        }
+        .Republican {
+            background-color: darkred;
+        }
+        img {
+            height:85px;width:auto;display:inline-block;
+        }
+        h1 {
+            font-size:1.2em !important;
+            color:white !important;
+        }
+        ion-card-content div {
+            font-size:1.1em !important;
+        }
+    }
 }

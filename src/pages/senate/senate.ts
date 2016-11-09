@@ -30,7 +30,7 @@ export class SenatePage {
   }
 
   ionViewWillEnter() {
-    try {this.loader.dismiss();} catch(e) {}
+    //try {this.loader.dismiss();} catch(e) {}
   }
 
   loadData() {

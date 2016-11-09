@@ -29,6 +29,10 @@ export class HousePage {
     this.loader.present();
   }
 
+  ngAfterViewInit() {
+    //try {this.loader.dismiss();} catch(e) {}
+  }
+
   ionViewWillEnter() {
     try {this.loader.dismiss();} catch(e) {}
   }
@@ -37,7 +41,6 @@ export class HousePage {
     this.house = this.data.getHouse();
     if (this.house.length > 0) {
       this.subscription.unsubscribe();
-      this.loader.dismiss();
     }
   }
 
