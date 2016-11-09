@@ -1,4 +1,9 @@
 page-bills {
     ion-card {margin:10px !important;text-align:left;padding-top:10px !important;}
-    ion-card h1 {font-size:1.2em !important}
+    ion-card-header {
+        background-color:#bebebe !important;
+        span {font-weight:bold;}
+        h1 {font-size:0.8em !important;color:blue !important;}
+        div {font-size:0.8em !important;color:#333 !important;}
+    }
 }
