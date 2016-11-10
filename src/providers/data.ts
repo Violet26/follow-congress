@@ -12,8 +12,8 @@ export class Data {
 
   constructor(public http: Http, public storage: Storage) {
     this.loadBills().then( data => { this.bills = data.objects; console.log("bills", this.bills); });
-    this.loadHouse().then( data => { this.house = data.objects; console.log("house", this.house); });
-    this.loadSenate().then( data => { this.senate = data.objects; console.log("senate", this.senate); });
+    this.loadHouse().then( data => { this.house = data.objects; /*console.log("house", this.house);*/ });
+    this.loadSenate().then( data => { this.senate = data.objects; /*console.log("senate", this.senate);*/ });
   }
 
   public getBills(): any {

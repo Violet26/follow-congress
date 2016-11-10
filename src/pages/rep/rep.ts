@@ -11,54 +11,35 @@ import { Data } from '../../providers/data';
 
 export class RepPage {
   errorMessage: any;
-  searchFor: string = "";
-  shouldShowCancel: boolean = false;
-  bill: string;
-  bills: any = [];
-  readView: any = [];
-  cleanView: any = [];
+  repID: number;
+  public repDetails: any;
+  allReps: any;
   loader: any;
 
   constructor(public navCtrl: NavController, public data: Data, public navParams: NavParams, public loadingCtrl: LoadingController) {
+    this.loader = this.navParams.get("loading");
+    this.repID = this.navParams.get("rep");
+    this.loadData();
   }
 
   ionViewWillEnter() {
-    this.loader.dismiss();
+    try { this.loader.dismiss(); } catch(e) { }
   }
 
   ngOnInit() {
-    this.bill = this.navParams.get("bill");
-    this.loader = this.navParams.get("loading");
-    this.bills = this.data.getBills();
-    this.setReadView();
   }
 
-  setReadView() {
-    this.readView = this.bills.filter(record => record.bill === this.bill)[0];
-    this.cleanView = this.readView;
-  }
-
-  onSearchCancel(event) {
-    this.readView = this.cleanView;
-  }
-
-  onSearchInput(event) {
-    var searchText = event.target.value;
-    console.log("search start: ", searchText);
-    if (searchText == "" || searchText == undefined || searchText.length < 3) {
-      this.readView = this.cleanView;
-    } else {
-      var temp = this.cleanView;
-      for (var c in temp.chapters) {
-        for (var v in temp.chapters[c].verses) {
-          var regex = new RegExp(searchText, "gi");
-          temp.chapters[c].verses[v] = temp.chapters[c].verses[v].replace(regex, "<span class=\"highlight\">"+searchText.toUpperCase()+"</span>");
-        }
-      }
-      this.readView = temp;
+  loadData() {
+    var dataType = this.navParams.get("dataType");
+    if (dataType == "house") {
+      this.allReps = this.data.getHouse();
+    } else if (dataType == "senate") {
+      this.allReps = this.data.getSenate();
     }
-    console.log("search end: ", searchText);
-    return true;
+    if (this.allReps) {
+      this.repDetails = this.allReps.filter(record => record.id == this.repID );
+      console.log(this.repDetails);
+    }
   }
 
 }

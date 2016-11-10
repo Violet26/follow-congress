@@ -30,7 +30,7 @@ export class HousePage {
   }
 
   loadData() {
-    this.house = this.data.getSenate();
+    this.house = this.data.getHouse();
     if (this.house.length > 0) {
       this.subscription.unsubscribe();
       this.loader.dismiss();
@@ -38,7 +38,7 @@ export class HousePage {
   }
 
   launchPage() {
-    this.navCtrl.push(RepPage, { rep: this.rep, loading: this.loader });
+    this.navCtrl.push(RepPage, { dataType: "house", rep: this.rep, loading: this.loader });
   }
 
   viewRep( rep: string ) {

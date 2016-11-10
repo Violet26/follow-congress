@@ -11,6 +11,7 @@ import { HousePage } from '../pages/house/house';
 import { SenatePage } from '../pages/senate/senate';
 import { AboutPage } from '../pages/about/about';
 import { ReadPage } from '../pages/read/read';
+import { RepPage } from '../pages/rep/rep';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReadPage } from '../pages/read/read';
     HousePage,
     SenatePage,
     AboutPage,
-    ReadPage
+    ReadPage,
+    RepPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -34,7 +36,8 @@ import { ReadPage } from '../pages/read/read';
     HousePage,
     SenatePage,
     AboutPage,
-    ReadPage
+    ReadPage,
+    RepPage
   ],
   providers: [
     Storage,

@@ -38,10 +38,10 @@ export class SenatePage {
   }
 
   launchPage() {
-    this.navCtrl.push(RepPage, { rep: this.rep, loading: this.loader });
+    this.navCtrl.push(RepPage, { dataType: "senate", rep: this.rep, loading: this.loader });
   }
 
-  readBook( rep: string ) {
+  viewRep( rep: string ) {
     this.rep = rep;
     let overlay = this.loadingCtrl.create({ content: "Loading " + rep + " ..." });
     this.loader = overlay;
