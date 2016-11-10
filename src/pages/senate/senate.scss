@@ -1,5 +1,47 @@
 page-senate {
-    ion-card {width:140px !important; float:left; margin:10px !important;text-align:center;padding-top:10px !important;}
-    ion-card img {height:65px;width:auto;display:inline-block;}
-    ion-card h1 {font-size:1.2em !important}
+    ion-card {
+        border-radius:12px !important;
+        width:140px !important;
+        float:left;
+        text-align:center;
+        padding-top:5px !important;
+        padding-top:10px !important;
+        margin-top:0 !important;
+        ion-card-header {
+            padding:0px !important;
+            margin:0 !important;
+        }
+        .Democrat {
+            background-color: darkblue;
+            color:#fff !important;
+            h1 {
+                color:#fff !important;
+            }
+        }
+        .Republican {
+            background-color: darkred;
+            color:#fff !important;
+            h1 {
+                color:#fff !important;
+            }
+        }
+        .Independent {
+            color:#333 !important;
+        }
+        img {
+            margin-top:5px;
+            height:105px;
+            width:auto;
+            display:inline-block;
+            border-radius:33px;
+        }
+        h1 {
+            font-size:1.0em !important;
+        }
+        ion-card-content {
+            h1 {
+                font-size:0.9em !important;
+            }
+        }
+    }
 }

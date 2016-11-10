@@ -1,5 +1,6 @@
 page-house {
     ion-card {
+        border-radius:12px !important;
         width:140px !important;
         float:left;
         text-align:center;
@@ -12,19 +13,35 @@ page-house {
         }
         .Democrat {
             background-color: darkblue;
+            color:#fff !important;
+            h1 {
+                color:#fff !important;
+            }
         }
         .Republican {
             background-color: darkred;
+            color:#fff !important;
+            h1 {
+                color:#fff !important;
+            }
+        }
+        .Independent {
+            color:#333 !important;
         }
         img {
-            height:85px;width:auto;display:inline-block;
+            margin-top:5px;
+            height:105px;
+            width:auto;
+            display:inline-block;
+            border-radius:33px;
         }
         h1 {
-            font-size:1.2em !important;
-            color:white !important;
+            font-size:1.0em !important;
         }
-        ion-card-content div {
-            font-size:1.1em !important;
+        ion-card-content {
+            h1 {
+                font-size:0.9em !important;
+            }
         }
     }
 }

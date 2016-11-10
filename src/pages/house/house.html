@@ -9,10 +9,8 @@
       <img src="https://www.govtrack.us/data/photos/{{rep.person.id}}-200px.jpeg"/>
       <h1>{{rep.person.lastname}}, {{rep.person.firstname}}</h1>
     </ion-card-header>
-    <ion-card-content>
-      <div>{{rep.party}}</div>
-      <div>since<br/>{{rep.startdate}}</div>
-      <div>next-election<br/>{{rep.enddate}}</div>
+    <ion-card-content [class]="rep.party">
+      <h1>{{rep.state}} {{rep.party}}</h1>
     </ion-card-content>
   </ion-card>
 </ion-content>
