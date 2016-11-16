@@ -40,16 +40,18 @@ export class HousePage {
       this.loader.dismiss();
     }
   }
+
   filter() {
     this.house = this.cleanHouse;
     if (this.filterParty == "All" && this.filterState !== "All") {
       this.house = this.house.filter(record => record.state === this.filterState);
     } else if (this.filterParty !== "All" && this.filterState == "All") {
       this.house = this.house.filter(record => record.party === this.filterParty);
-    } else {
+    } else if (this.filterParty !== "All" && this.filterState !== "All") {
       this.house = this.house.filter(record => record.party === this.filterParty && record.state === this.filterState);
     }
   }
+
   launchPage() {
     this.navCtrl.push(RepPage, { dataType: "house", rep: this.rep, loading: this.loader });
   }

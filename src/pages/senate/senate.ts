@@ -12,11 +12,14 @@ import {Observable} from 'rxjs/Rx';
 
 export class SenatePage {
   errorMessage: any;
-  public senate: any = [];
+  senate: any = [];
+  cleanSenate: any = [];
   rep: string;
   loader: any;
   timer: any;
   subscription: any;
+  filterParty: string = "All";
+  filterState: string = "All";
 
   constructor(public navCtrl: NavController, public data: Data, public loadingCtrl: LoadingController) {
     this.timer = Observable.timer(2000, 3000);
@@ -31,9 +34,21 @@ export class SenatePage {
 
   loadData() {
     this.senate = this.data.getSenate();
+    this.cleanSenate = this.data.getSenate();
     if (this.senate.length > 0) {
       this.subscription.unsubscribe();
       this.loader.dismiss();
+    }
+  }
+
+  filter() {
+    this.senate = this.cleanSenate;
+    if (this.filterParty == "All" && this.filterState !== "All") {
+      this.senate = this.senate.filter(record => record.state === this.filterState);
+    } else if (this.filterParty !== "All" && this.filterState == "All") {
+      this.senate = this.senate.filter(record => record.party === this.filterParty);
+    } else  if (this.filterParty !== "All" && this.filterState !== "All") {
+      this.senate = this.senate.filter(record => record.party === this.filterParty && record.state === this.filterState);
     }
   }
 
