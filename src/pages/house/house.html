@@ -1,6 +1,17 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>House</ion-title>
+    <ion-item>
+        <ion-select [(ngModel)]="filterParty" (ionChange)="filter()">
+          <ion-option value="All" selected="true">All Parties</ion-option>
+          <ion-option value="Republican">Republican</ion-option>
+          <ion-option value="Democrat">Democrat</ion-option>
+          <ion-option value="Independant">Independant</ion-option>
+        </ion-select>
+        <ion-select [(ngModel)]="filterState" (ionChange)="filter()">
+          <ion-option value="All" selected="true">All States</ion-option>
+          <ion-option value="GA">GA</ion-option>
+        </ion-select>
+    </ion-item>
   </ion-navbar>
 </ion-header>
 <ion-content padding>

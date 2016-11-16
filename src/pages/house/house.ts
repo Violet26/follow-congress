@@ -12,11 +12,14 @@ import {Observable} from 'rxjs/Rx';
 
 export class HousePage {
   errorMessage: any;
-  public house: any = [];
+  house: any = [];
+  cleanHouse: any = [];
   rep: string;
   loader: any;
   timer: any;
   subscription: any;
+  filterParty: string = "All";
+  filterState: string = "All";
 
   constructor(public navCtrl: NavController, public data: Data, public loadingCtrl: LoadingController) {
     this.timer = Observable.timer(2000, 3000);
@@ -31,12 +34,22 @@ export class HousePage {
 
   loadData() {
     this.house = this.data.getHouse();
+    this.cleanHouse = this.data.getHouse();
     if (this.house.length > 0) {
       this.subscription.unsubscribe();
       this.loader.dismiss();
     }
   }
-
+  filter() {
+    this.house = this.cleanHouse;
+    if (this.filterParty == "All" && this.filterState !== "All") {
+      this.house = this.house.filter(record => record.state === this.filterState);
+    } else if (this.filterParty !== "All" && this.filterState == "All") {
+      this.house = this.house.filter(record => record.party === this.filterParty);
+    } else {
+      this.house = this.house.filter(record => record.party === this.filterParty && record.state === this.filterState);
+    }
+  }
   launchPage() {
     this.navCtrl.push(RepPage, { dataType: "house", rep: this.rep, loading: this.loader });
   }

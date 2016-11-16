@@ -1,4 +1,13 @@
 page-house {
+    ion-navbar {
+        ion-item {
+            ion-select {
+                background-color:#fff !important;
+                border-radius: 8px;
+                margin-left:6px !important;
+            }
+        }
+    }
     ion-card {
         border-radius:12px !important;
         width:146px !important;
