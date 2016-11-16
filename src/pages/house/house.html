@@ -4,12 +4,12 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-card *ngFor="let rep of house; let i = index;" (click)="viewRep(rep.id);">
+  <ion-card *ngFor="let rep of house; let i = index;" (click)="viewRep(rep.id);" [class]="rep.party">
     <ion-card-header [class]="rep.party">
       <img src="https://www.govtrack.us/data/photos/{{rep.person.id}}-200px.jpeg"/>
       <h1>{{rep.person.lastname}}, {{rep.person.firstname}}</h1>
     </ion-card-header>
-    <ion-card-content [class]="rep.party">
+    <ion-card-content>
       <h1>{{rep.state}} {{rep.party}}</h1>
     </ion-card-content>
   </ion-card>

@@ -1,31 +1,32 @@
 page-senate {
     ion-card {
         border-radius:12px !important;
-        width:140px !important;
+        width:146px !important;
         float:left;
         text-align:center;
         padding-top:5px !important;
         padding-top:10px !important;
-        margin-top:0 !important;
+        margin:8px !important;
         ion-card-header {
             padding:0px !important;
             margin:0 !important;
         }
-        .Democrat {
+        &.Democrat {
             background-color: darkblue;
             color:#fff !important;
             h1 {
                 color:#fff !important;
             }
         }
-        .Republican {
+        &.Republican {
             background-color: darkred;
             color:#fff !important;
             h1 {
                 color:#fff !important;
             }
         }
-        .Independent {
+        &.Independent {
+            background-color: white;
             color:#333 !important;
         }
         img {
