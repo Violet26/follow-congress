@@ -11,9 +11,17 @@ export class Data {
   private senate: any = [];
 
   constructor(public http: Http, public storage: Storage) {
-    this.loadBills().then( data => { this.bills = data.objects; console.log("bills", this.bills); });
-    this.loadHouse().then( data => { this.house = data.objects; /*console.log("house", this.house);*/ });
-    this.loadSenate().then( data => { this.senate = data.objects; /*console.log("senate", this.senate);*/ });
+    //this.loadBills().then( data => { this.bills = data.objects; console.log("bills", this.bills); });
+    this.loadHouse().then( data => {
+      this.house = data.objects;
+      this.house = this.house.sort(function(a,b){return (b.person.lastname < a.person.lastname) ? 1 : -1});
+      console.log("house", this.house);
+    });
+    this.loadSenate().then( data => {
+      this.senate = data.objects;
+      this.senate = this.senate.sort(function(a,b){return (b.person.lastname < a.person.lastname) ? 1 : -1});
+      //console.log("senate", this.senate);
+    });
   }
 
   public getBills(): any {
