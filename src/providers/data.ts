@@ -15,7 +15,7 @@ export class Data {
     this.loadHouse().then( data => {
       this.house = data.objects;
       this.house = this.house.sort(function(a,b){return (b.person.lastname < a.person.lastname) ? 1 : -1});
-      console.log("house", this.house);
+      //console.log("house", this.house);
     });
     this.loadSenate().then( data => {
       this.senate = data.objects;

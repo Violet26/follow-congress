@@ -1,9 +1,44 @@
 <ion-header>
   <ion-navbar>
-    <ion-title><span [innerHTML] ="repDetails.person.lastname"></span></ion-title>
+    <ion-title><span [innerHTML] ="dataType.toUpperCase()"></span></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="https://www.govtrack.us/data/photos/{{repDetails.person.id}}-200px.jpeg">
+      </ion-avatar>
+      <h2>{{repDetails.person.lastname}}, {{repDetails.person.firstname}}</h2>
+      <p>November 5, 1955</p>
+    </ion-item>
+
+    <ion-card-content>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button primary clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button primary clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 
 </ion-content>
