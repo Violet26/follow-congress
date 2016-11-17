@@ -73,6 +73,14 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+
+  <ion-row *ngIf="senate.length <= 0" class="noMatch">
+    <ion-col>
+      <h1>No matches found !</h1>
+      <h1>Please change filter values</h1>
+    </ion-col>
+  </ion-row>
+
   <ion-card *ngFor="let rep of senate; let i = index;" (click)="viewRep(rep.id);" [class]="rep.party">
     <ion-card-header [class]="rep.party">
       <img src="https://www.govtrack.us/data/photos/{{rep.person.id}}-200px.jpeg"/>
@@ -82,4 +90,5 @@
       <h1>{{rep.state}} {{rep.party}}</h1>
     </ion-card-content>
   </ion-card>
+
 </ion-content>

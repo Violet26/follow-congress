@@ -19,7 +19,7 @@
       <p [innerHTML]="repDetails.description"></p>
       <ion-col *ngIf="repDetails.extra.contact_form">
         <ion-icon name="clipboard"></ion-icon> Contact Form
-        <div>{{repDetails.extra.contact_form}}</div>
+        <div><a href="{{repDetails.extra.contact_form}}" target="_blank">{{repDetails.extra.contact_form}}</a></div>
       </ion-col>
       <ion-col *ngIf="repDetails.extra.fax">
         <ion-icon name="print"></ion-icon> Fax
@@ -31,21 +31,29 @@
       </ion-col>
       <ion-col *ngIf="repDetails.extra.rss_url">
         <ion-icon name="logo-rss"></ion-icon> RSS Feed
-        <div>{{repDetails.extra.rss_url}}</div>
+        <div><a href="{{repDetails.extra.rss_url}}" target="_blank">{{repDetails.extra.rss_url}}</a></div>
+      </ion-col>
+      <ion-col *ngIf="repDetails.website">
+        <ion-icon name="globe"></ion-icon> WebSite
+        <div><a href="{{repDetails.website}}" target="_blank">{{repDetails.website}}</a></div>
+      </ion-col>
+      <ion-col *ngIf="repDetails.person.link">
+        <ion-icon name="information-circle"></ion-icon> GovTrack
+        <div><a href="{{repDetails.person.link}}" target="_blank">{{repDetails.person.link}}</a></div>
       </ion-col>
     </ion-card-content>
 
     <ion-row>
       <ion-col>
-        <button primary clear small *ngIf="repDetails.person.twitterid">
+        <button primary clear small *ngIf="repDetails.person.twitterid !== null">
           <ion-icon name="logo-twitter"></ion-icon>
-          <div>{{repDetails.person.twitterid}}</div>
+          <div><a href="https://twitter.com/{{repDetails.person.twitterid}}" target="_blank">{{repDetails.person.twitterid}}</a></div>
         </button>
       </ion-col>
       <ion-col>
-        <button primary clear small *ngIf="repDetails.person.youtubeid">
+        <button primary clear small *ngIf="repDetails.person.youtubeid !== null">
           <ion-icon name="logo-youtube"></ion-icon>
-          <div>{{repDetails.person.youtubeid}}</div>
+          <div><a href="https://youtube.com/{{repDetails.person.youtubeid}}" target="_blank">{{repDetails.person.youtubeid}}</a></div>
         </button>
       </ion-col>
       <ion-col center text-center>

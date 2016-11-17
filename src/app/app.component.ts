@@ -16,7 +16,7 @@ export class MyApp {
   constructor(public platform: Platform, public data: Data, public loadingCtrl: LoadingController) {
     platform.ready().then(() => {
       StatusBar.styleDefault();
-      var admobid = {banner: "ca-app-pub-", interstitial: ""};
+      var admobid = {banner: "ca-app-pub-4615642243411455/2454397564", interstitial: ""};
       AdMob.createBanner({
         adId:admobid.banner,
         position: 8,
