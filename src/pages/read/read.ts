@@ -33,7 +33,7 @@ export class ReadPage {
 
   setReadView() {
     this.readView = this.bills.filter(record => record.id === this.bill)[0];
-    console.log("READ", this.readView);
+    //console.log("READ", this.readView);
     this.cleanView = this.readView;
   }
 

@@ -39,7 +39,7 @@ export class RepPage {
     }
     if (this.allReps) {
       this.repDetails = this.allReps.filter(record => record.id == this.repID)[0];
-      console.log(this.repDetails);
+      //console.log(this.repDetails);
     }
   }
 
