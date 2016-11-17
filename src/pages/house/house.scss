@@ -2,12 +2,20 @@ page-house {
     .noMatch {
         background-color:#FFF;
     }
-    ion-navbar {
-        ion-item {
-            ion-select {
-                background-color:#fff !important;
-                border-radius: 8px;
-                margin-left:6px !important;
+    .item-inner {
+        border:0 !important;
+    }
+    ion-header {
+        ion-navbar {
+            ion-item {
+                background-color:$dark !important;
+                padding:3px !important;
+                ion-select {
+                    background-color:#fff !important;
+                    border-radius: 8px;
+                    border-color:$primary;
+                    margin-left:6px !important;
+                }
             }
         }
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.buildinthecloud.followcongress" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>follow-congress</name>
-  <description>follow-congress.</description>
+<widget id="com.buildinthecloud.followcongress" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Follow Congress</name>
+  <description>Follow Congress gives you all the ways to connect with your representatives.</description>
   <author email="mark@buildinthecloud.com" href="http://www.buildinthecloud.com/follow-congress.html">BuildInTheCloud</author>
   <content src="index.html"/>
-  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+  <icon src="resources/icon.png"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>

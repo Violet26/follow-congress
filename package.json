@@ -1,9 +1,9 @@
 {
   "name": "follow-congress",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "BuildInTheCloud",
   "homepage": "http://www.buildinthecloud/follow-congress.html",
-  "description": "follow-congress.",
+  "description": "Follow Congress gives you all the ways to connect with your representatives.",
   "private": true,
   "repository": {
     "type": "git",
