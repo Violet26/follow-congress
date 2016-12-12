@@ -8,13 +8,14 @@ page-house {
     ion-header {
         ion-navbar {
             ion-item {
-                background-color:$dark !important;
+                background-color: transparent !important;
                 padding:3px !important;
                 ion-select {
-                    background-color:#fff !important;
+                    background-color:transparent;
                     border-radius: 8px;
                     border-color:$primary;
                     margin-left:6px !important;
+                    background-image:url(../assets/images/dropdown-background.png) !important;
                 }
             }
         }

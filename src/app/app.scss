@@ -19,16 +19,18 @@
     color:$font-light !important;
 }
 .tabbar {
-    background-color: $primary !important;
+    background-color: transparent !important;
+    background-image:url(../assets/images/header-background.png) !important;
 }
 .tab-button {
     color:$font-light !important;
 }
 .tab-button[aria-selected="true"] {
-    background-color:$dark !important;
+    background-color:rgba(0,0,0,0.4) !important;
 }
 .toolbar-background {
-    background-color:$dark !important;
+    background-color: transparent !important;
+    background-image:url(../assets/images/header-background.png);
 }
 .toolbar-title {
     color:$font-light !important;

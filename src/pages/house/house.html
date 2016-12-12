@@ -74,7 +74,7 @@
 </ion-header>
 <ion-content padding>
 
-  <ion-row *ngIf="house.length <= 0" class="noMatch">
+  <ion-row *ngIf="house && house.length <= 0" class="noMatch">
     <ion-col>
       <h1>No matches found !</h1>
       <h1>Please change filter values</h1>

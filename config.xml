@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.buildinthecloud.followcongress" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.buildinthecloud.followcongress" version="1.0.1" Publisher="CN=4598A1B8-365D-4826-BDD0-0F97CB5BA647" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Follow Congress</name>
   <description>Follow Congress gives you all the ways to connect with your representatives.</description>
   <author email="mark@buildinthecloud.com" href="http://www.buildinthecloud.com/follow-congress.html">BuildInTheCloud</author>
   <content src="index.html"/>
-  <icon src="resources/icon.png"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
@@ -23,8 +22,9 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreenDelay" value="8000"/>
-  <preference name="FadeSplashScreenDuration" value="4000"/>
+  <preference name="AutoHideSplashScreen" value="true"/>
+  <preference name="SplashScreenDelay" value="5000"/>
+  <preference name="FadeSplashScreenDuration" value="1000"/>
   <preference name="KeepRunning" value="true"/>
   <preference name="ShowTitle" value="true"/>
   <preference name="InAppBrowserStorageEnabled" value="true"/>
@@ -36,39 +36,39 @@
   <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
   <preference name="xwalkMode" value="embedded"/>
   <preference name="xwalkMultipleApk" value="true"/>
-  <preference name="SplashMaintainAspectRatio" value="true"/>
-  <preference name="SplashShowOnlyFirstTime" value="true"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
   <feature name="CDVWKWebViewEngine">
     <param name="ios-package" value="CDVWKWebViewEngine"/>
   </feature>
-  <plugin name="cordova-plugin-splashscreen" spec="https://github.com/apache/cordova-plugin-splashscreen.git"/>
+  <plugin name="cordova-plugin-taptic-engine" spec="~2.1.0"/>
+  <plugin name="cordova-plugin-splashscreen" spec="~4.0.0"/>
+  <plugin name="cordova-plugin-inappbrowser" spec="~1.4.0"/>
   <plugin name="cordova-plugin-wkwebview-engine" spec="https://github.com/driftyco/cordova-plugin-wkwebview-engine.git"/>
-  <plugin name="cordova-plugin-device" spec="~1.1.2"/>
-  <plugin name="cordova-plugin-console" spec="~1.0.3"/>
-  <plugin name="cordova-plugin-whitelist" spec="~1.2.2"/>
-  <plugin name="cordova-plugin-statusbar" spec="~2.1.3"/>
+  <plugin name="cordova-plugin-device" spec="~1.1.3"/>
+  <plugin name="cordova-plugin-console" spec="~1.0.4"/>
+  <plugin name="cordova-plugin-whitelist" spec="~1.3.0"/>
+  <plugin name="cordova-plugin-statusbar" spec="~2.2.0"/>
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
   <plugin name="cordova-plugin-x-toast" spec="~2.5.2"/>
-  <plugin name="cordova-plugin-admobpro" spec=""/>
+  <plugin name="cordova-plugin-admobpro" spec="https://www.npmjs.com/package/cordova-plugin-admobpro.git"/>
   <platform name="android">
     <framework src="com.google.android.gms:play-services-ads:+"/>
     <android-targetSdkVersion value="25"/>
     <allow-intent href="market:*"/>
-    <icon src="resources\android\icon\drawable-ldpi-icon" density="ldpi"/>
-    <icon src="resources\android\icon\drawable-mdpi-icon" density="mdpi"/>
-    <icon src="resources\android\icon\drawable-hdpi-icon" density="hdpi"/>
-    <icon src="resources\android\icon\drawable-xhdpi-icon" density="xhdpi"/>
-    <icon src="resources\android\icon\drawable-xxhdpi-icon" density="xxhdpi"/>
-    <icon src="resources\android\icon\drawable-xxxhdpi-icon" density="xxxhdpi"/>
-    <splash src="resources\android\splash\drawable-port-ldpi-screen" density="port-ldpi"/>
-    <splash src="resources\android\splash\drawable-port-mdpi-screen" density="port-mdpi"/>
-    <splash src="resources\android\splash\drawable-port-hdpi-screen" density="port-hdpi"/>
-    <splash src="resources\android\splash\drawable-port-xhdpi-screen" density="port-xhdpi"/>
-    <splash src="resources\android\splash\drawable-port-xxhdpi-screen" density="port-xxhdpi"/>
-    <splash src="resources\android\splash\drawable-port-xxxhdpi-screen" density="port-xxxhdpi"/>
+    <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
+    <icon src="resources\android\icon\drawable-mdpi-icon.png" density="mdpi"/>
+    <icon src="resources\android\icon\drawable-hdpi-icon.png" density="hdpi"/>
+    <icon src="resources\android\icon\drawable-xhdpi-icon.png" density="xhdpi"/>
+    <icon src="resources\android\icon\drawable-xxhdpi-icon.png" density="xxhdpi"/>
+    <icon src="resources\android\icon\drawable-xxxhdpi-icon.png" density="xxxhdpi"/>
+    <splash src="resources\android\splash\drawable-port-ldpi-screen.png" density="port-ldpi"/>
+    <splash src="resources\android\splash\drawable-port-mdpi-screen.png" density="port-mdpi"/>
+    <splash src="resources\android\splash\drawable-port-hdpi-screen.png" density="port-hdpi"/>
+    <splash src="resources\android\splash\drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
+    <splash src="resources\android\splash\drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
+    <splash src="resources\android\splash\drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
   </platform>
   <platform name="ios">
     <allow-intent href="itms:*"/>
@@ -102,9 +102,9 @@
   <platform name="windows">
     <preference name="windows-target-version" value="10.0"/>
     <preference name="WindowsToastCapable" value="true"/>
-    <preference name="WindowsStoreIdentityName" value="64909BuildInTheCloud.follow-congress"/>
+    <preference name="WindowsStoreIdentityName" value="64909BuildInTheCloud.FollowCongress"/>
     <preference name="WindowsStorePublisherName" value="BuildInTheCloud"/>
-    <preference name="WindowsStoreDisplayName" value="funnelope"/>
+    <preference name="WindowsStoreDisplayName" value="Follow Congress"/>
     <splash src="resources/windows/images/SplashScreen.scale-100.png" width="620" height="300"/>
     <splash src="res/screens/windows/SplashScreen.scale-240.png" width="1152" height="1920"/>
     <splash src="resources/windows/images/SplashScreenPhone.scale-240.png" width="1152" height="1920"/>

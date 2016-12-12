@@ -19,7 +19,7 @@
   "atom": {
     "rewriteTsconfig": false
   },
-  "includex": [
+  "include": [
     "C:\\code\\follow-congress\\src\\app\\main.dev.ts",
     "C:\\code\\follow-congress\\src\\**\\*.d.ts"
   ]
