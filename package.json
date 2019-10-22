@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "angular2-moment": "^1.0.0-beta.6",
-    "moment": "2.15.1",
+    "moment": "2.24.0",
     "@angular/common": "2.2.1",
     "@angular/compiler": "2.2.1",
     "@angular/compiler-cli": "2.2.1",
